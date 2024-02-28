@@ -1,3 +1,10 @@
+@font-face {
+	font-family: 'Proxima Nova';
+	src: url('fonts/proximanova_regular.ttf');
+	font-weight: normal;
+	font-style: normal;
+}
+
 @media (max-width: 460px){
     .menu {margin: 0px 2% 0px 2%;}
 }
@@ -110,16 +117,16 @@
     }
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Proxima+Nova');
-
 .space{
     padding-left: 4%;
     padding-right: 4%;
 }
 
 body{
-    margin: 0;
+    max-width: 1440px;
+    margin: auto;
     font-family: "Proxima Nova", sans-serif;
+    max-width: 1920px;
 }
 
 main {
@@ -127,19 +134,16 @@ main {
 }
 
 .header{
+    max-width: 1920px;
+    margin: auto;
     transition: 1s;
     position: fixed;
     display: grid;
-    grid-template-columns: 105px 1fr 1fr;
+    grid-template-columns: 1fr 8fr 4fr ;
     padding-bottom: 20px;
     border-bottom: 2px solid black;
-    width: 100%;
     background-color: transparent;
     z-index: 99;
-}
-
-.header.active{
-    background-color: rgb(255, 255, 255);
 }
 
 .logo{
@@ -162,11 +166,12 @@ main {
 .menu__items{
     list-style: none;
     display: flex;
+    margin-top: 25px;
 }
 
 .menu__item{
     margin-right: 15px;
-    font-size: 14px;
+    font-size: 16px;
     color: #676F73;
 }
 
@@ -212,7 +217,6 @@ main {
 .menu__submenu-link{
     color:black;
     text-decoration: none;
-    font-size: 14px;
 }
 
 .right-menu{
@@ -230,7 +234,7 @@ main {
 
 .menu__phone-number-color-text{
     color: #5457F5;
-    ;
+    margin-right: 0.3em;
 }
 
 .right-menu__button{
@@ -408,6 +412,10 @@ main {
     margin-top: 20px;
     color: #263238;
     font-size: 24px;
+}
+
+.possibilites__title-text{
+    font-weight: bold;
 }
 
 .possibilites__info-text{
