@@ -137,8 +137,13 @@
 }
 
 @media (max-width: 1300px){
-    .open{
+    .menu_visible{
         display: flex !important;
+        margin-top: 62px;
+    }
+
+    .header_background{
+        background-color: rgb(255, 255, 255);
     }
 
     .header{
@@ -179,7 +184,7 @@
         bottom: 0;
         left: 0;
         right: 0;
-        z-index: 49;
+        z-index: 5;
         overflow-y: auto;
         padding: 50px 40px;
         background-color: #ffffff;
@@ -267,6 +272,7 @@
 @media (max-width: 700px){
     .open{
         display: flex !important;
+        margin-top: 62px;
     }
 
     .vissible{
@@ -303,7 +309,7 @@
         bottom: 0;
         left: 0;
         right: 0;
-        z-index: 49;
+        z-index: 5;
         overflow-y: auto;
         padding: 50px 40px;
         background-color: #ffffff;
