@@ -10,8 +10,85 @@
 }
 
 @media (min-width: 1300px){
+    .header{
+        grid-template-columns: 1fr 8fr 4fr ;
+    }
+
     .info{
         grid-template-columns: 33% 20px 33% 20px 33%;
+    }
+
+    .logo{
+        margin-left: 50px;
+        display: flex;
+        align-items: center;
+    }
+
+    .menu{
+        position: static;
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .menu__items{
+        list-style: none;
+        display: flex;
+        margin-top: 25px;
+    }
+    
+    .menu__item{
+        margin-right: 15px;
+        font-size: 16px;
+    }
+    
+    .menu__item:last-child{
+        margin-right: 0px;
+    }
+    
+    .menu__link{
+        color: #676F73;
+        text-decoration: none;
+    }
+    
+    .menu__arrow{
+        padding-left: 1px;
+    }
+    
+    .right-menu{
+        margin: 10px 50px 0 0;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    
+    .right-menu__phone-number{
+        display: flex;
+        margin-right: 20px;
+        font-size: 20px;
+    }
+    
+    .menu__phone-number-color-text{
+        color: #5457F5;
+        margin-right: 0.3em;
+    }
+    
+    .right-menu__button{
+        display: grid;
+        place-items: center center;
+    }
+
+    .right-menu{
+        position: static;
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .burger-menu{
+        visibility: hidden;
+    }
+
+    .support__picture{
+        visibility: visible;
     }
 
     .technologies{
@@ -30,8 +107,14 @@
         grid-template-columns: repeat(3, 1fr);
     }
 
+    .subscription-top-block__left-side-text{
+        font-size: 28px;
+    }
+
     .project{
+        display: grid;
         grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: none;
     }
 
     .project__site{
@@ -42,9 +125,26 @@
     .possibilites__line{
         min-width: 90%;
     }
+
+    .big-button__txt{
+        font-size: 64px;
+    }
+
+    .footer-main{
+        grid-template-columns: 33% repeat(3, 22%);
+        grid-template-rows: none;
+    }
 }
 
 @media (max-width: 1300px){
+    .open{
+        display: flex !important;
+    }
+
+    .header{
+        grid-template-columns: 1fr 8fr 4fr ;
+    }
+
     .info{
         grid-template-columns: 90% 20px;
     }
@@ -53,6 +153,58 @@
         filter: grayscale(100%);
     }
     
+    .logo{
+        margin: 10px 0 10px 50px;
+    }
+
+    .menu__items{
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        margin-top: 25px;
+    }
+
+    .menu__item{
+        margin-top: 25px;
+    }
+
+    .menu{
+        display: none;
+        position: fixed;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 49;
+        overflow-y: auto;
+        padding: 50px 40px;
+        background-color: #ffffff;
+        animation: burgerAnimation .5s;
+    }
+
+    .menu__link{
+        color: black;
+        text-decoration: none;
+    }
+
+    .right-menu{
+        position: absolute;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    .burger-menu{
+        visibility: visible;
+        grid-column: 4;
+        margin: 21px 30px 0 0;
+    }
+
+    .support__picture{
+        visibility: hidden;
+    }
 
     .technologies{
         grid-template-columns: repeat(2, 50%);
@@ -66,12 +218,18 @@
         grid-template-columns: repeat(2, 50%);
     }
 
+    .subscription-top-block__left-side-text{
+        font-size: 15px;
+    }
+
     .subscription__version{
         margin-bottom: 20px;
     }
 
     .project{
+        display: grid;
         grid-template-columns: repeat(2, 50%);
+        grid-template-rows: none;
     }
     .project__site{
         width: 250px;
@@ -82,9 +240,95 @@
         width: 200px;
         height: 200px;
     }
+
+    .big-button__txt{
+        font-size: 40px;
+    }
+
+    .footer-main{
+        grid-template-columns: 33% repeat(3, 22%);
+        grid-template-rows: none;
+    }
+    
+    .footer-bottom__left-side{
+        flex-direction: column;
+    }
 }
 
 @media (max-width: 700px){
+    .open{
+        display: flex !important;
+    }
+
+    .header{
+        height: 60px;
+    }
+
+    .logo{
+        margin: 10px 0 10px 50px;
+    }
+
+    .menu{
+        position: absolute;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    .menu__items{
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        margin-top: 25px;
+    }
+
+    .menu__item{
+        margin-top: 25px;
+    }
+
+    .menu{
+        display: none;
+        position: fixed;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 49;
+        overflow-y: auto;
+        padding: 50px 40px;
+        background-color: #ffffff;
+        animation: burgerAnimation .5s;
+    }
+
+    .menu__link{
+        color: black;
+        text-decoration: none;
+    }
+
+    .burger-menu{
+        visibility: visible;
+        grid-column: 4;
+        margin: 21px 30px 0 0;
+    }
+
+    .right-menu{
+        position: absolute;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    .right-menu{
+        position: absolute;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    .support__picture{
+        visibility: hidden;
+    }
+
     .technologies{
         grid-template-columns: 1fr;
     }
@@ -102,18 +346,42 @@
         grid-template-columns: 1fr;
     }
 
+    .subscription-top-block__left-side-text{
+        font-size: 15px;
+    }
+
     .project{
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .project__site{
-        width: 150px;
-        height: 150px;
+        width: 250px;
+        height: 250px;
     }
 
     .project__img{
-        width: 100px;
-        height: 100px;
+        width: 200px;
+        height: 200px;
+    }
+
+    .big-button__txt{
+        font-size: 25px;
+    }
+
+    .big-button__img{
+        width: 50%;
+        height: 50%;
+    }
+
+    .footer-main{
+        grid-template-columns: none;
+        grid-template-rows: repeat(4, 25%);
+    }
+
+    .footer-bottom__left-side{
+        flex-direction: column;
     }
 }
 
@@ -123,10 +391,9 @@
 }
 
 body{
-    max-width: 1440px;
     margin: auto;
-    font-family: "Proxima Nova", sans-serif;
     max-width: 1920px;
+    font-family: "Proxima Nova", sans-serif;
 }
 
 main {
@@ -139,59 +406,14 @@ main {
     transition: 1s;
     position: fixed;
     display: grid;
-    grid-template-columns: 1fr 8fr 4fr ;
-    padding-bottom: 20px;
     border-bottom: 2px solid black;
     background-color: transparent;
     z-index: 99;
 }
 
-.logo{
-    margin-left: 50px;
-    display: flex;
-    align-items: center;
-}
-
 .logo__img{
     display: flex;
     align-items: center;
-}
-
-.menu{
-    margin-left: 50px;
-    display: flex;
-    align-items: center;
-}
-
-.menu__items{
-    list-style: none;
-    display: flex;
-    margin-top: 25px;
-}
-
-.menu__item{
-    margin-right: 15px;
-    font-size: 16px;
-    color: #676F73;
-}
-
-.menu__item:last-child{
-    margin-right: 0px;
-}
-
-.menu__item:hover .menu__submenu-wrapper{
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0px);
-}
-
-.menu__link{
-    color: #676F73;
-    text-decoration: none;
-}
-
-.menu__arrow{
-    padding-left: 1px;
 }
 
 .menu__submenu-wrapper{
@@ -214,32 +436,77 @@ main {
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
 }
 
-.menu__submenu-link{
-    color:black;
-    text-decoration: none;
-}
+.menu__item:hover .menu__submenu-wrapper{
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0px);
+    }
 
-.right-menu{
-    margin: 10px 50px 0 0;
+    .menu__submenu-link{
+        color:black;
+        text-decoration: none;
+    }
+
+.burger-menu{
     display: flex;
-    justify-content: flex-end;
+    position: relative;
+    z-index: 50;
     align-items: center;
+    justify-content: flex-end;
+    width: 30px;
+    height: 20px;
+
 }
 
-.right-menu__phone-number{
-    display: flex;
-    margin-right: 20px;
-    font-size: 20px;
+.burger-menu span{
+    height: 2px;
+    width: 100%;
+    transform: scale(1);
+    background-color: #263238;
+    transition: all .5s ease;
 }
 
-.menu__phone-number-color-text{
-    color: #5457F5;
-    margin-right: 0.3em;
+.burger-menu::after{
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background-color: #263238;
+    transition: all .5s ease;
+    top: 0;
 }
 
-.right-menu__button{
-    display: grid;
-    place-items: center center;
+.burger-menu::before{
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 70%;
+    transform: scale(1);
+    background-color: #263238;
+    transition: all .5s ease;
+    bottom: 0;
+}
+
+.burger-menu.active::before{
+    transform: scale(0);
+}
+
+.burger-menu.active::after{
+    top: 40%;
+    transform: rotate(45deg) translate(0,50%);
+}
+
+.burger-menu.active span{
+    transform: rotate(-45deg) translate(0,-50%);
+}
+
+@keyframes burgerAnimation{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
 }
 
 .button{
@@ -406,6 +673,7 @@ main {
     align-self: center;
     height: 0px;
     color: #5457F5;
+    width: 65%;
 }
 
 .possibilites__text-block{
@@ -420,7 +688,6 @@ main {
 
 .possibilites__info-text{
     margin-top: 25px;
-    font-size: 22px;
     color: #676F73;
 }
 
@@ -437,7 +704,6 @@ main {
 
 .subscription-top-block__left-side-text{
     color: #676F73;
-    font-size: 28px;
     max-width: 700px;
 }
 
@@ -512,10 +778,6 @@ main {
     margin-top: 30px;
 }
 
-.project{
-    display: grid;
-}
-
 .project__block{
     display: flex;
     flex-direction: column;
@@ -577,7 +839,6 @@ main {
 
 .big-button__txt{
     margin: 30px 30px 30px 60px;
-    font-size: 64px;
     font-weight: bold;
     color: #ffffff;
     text-align: left;
@@ -592,7 +853,6 @@ main {
 
 .footer-main{
     display: grid;
-    grid-template-columns: 33% repeat(3, 22%);
     margin-top: 50px;
 }
 
