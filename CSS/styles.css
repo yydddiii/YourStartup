@@ -474,6 +474,21 @@ input{
     padding-bottom: 10px;
 }
 
+.application__call-input{
+    border: 0;
+    width: 90%;
+    font-size: 20px;
+    padding: 15px 15px 0 15px;
+    height: 44px;
+    outline: none;
+    resize: none;
+    transition: all .5s ease;
+}
+
+.application__call-input:is(:focus){
+    height: 150px;
+}
+
 .application__text{
     padding-right: 100px;
 }
@@ -521,15 +536,17 @@ input{
     display: flex;
     flex-direction: column;
     color:black;
-    text-decoration: none;
     background-color: #ffffff;
+    max-width: 658px;
 }
 
 .application__submenu-option{
     margin-top: 7px;
-    text-decoration: none;
     color: #676F73;
     font-size: 20px;
+    border: none;
+    background-color: #ffffff;
+    user-select: none;
 }
 
 .application__select-rate-text{

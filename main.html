@@ -62,7 +62,7 @@
                 </div>
                 <div class="application__rate-block">
                     <div class="application__select-rate">
-                        <div class="application__select-rate-text">тариф</div>
+                        <div id='application__select-rate-text' class="application__select-rate-text">текст</div>
                         <div class="application__select-arrow">
                             <span class="application__select-arrow-left"></span>
                             <span class="application__select-arrow-right"></span>
@@ -70,15 +70,15 @@
                     </div>
                     <div class="application__submenu-rate-wrapper" style="visibility: hidden; opacity: 0;">
                         <div class="application__submenu-rate">
-                            <div id="application__submenu-option" class="application__submenu-option application__submenu-option1">лайт</div>
-                            <div id="application__submenu-option" class="application__submenu-option application__submenu-option2">мидл</div>
-                            <div id="application__submenu-option" class="application__submenu-option application__submenu-option3">хард</div>
+                            <div id="application__submenu-option1" class="application__submenu-option application__submenu-option1" onclick = changeSubscripton()>лайт</div>
+                            <div id="application__submenu-option2" class="application__submenu-option application__submenu-option2" onclick = changeSubscripton()>мидл</div>
+                            <div id="application__submenu-option3" class="application__submenu-option application__submenu-option3" onclick = changeSubscripton()>хард</div>
                         </div>
                     </div>
                 </div>
                 <div class="application__call">
                     <div class="application__input-call">
-                        <input type="text" name="application__call-input" class="application__call-input application__input-entry" placeholder="Сообщение">
+                        <textarea type="text" name="application__call-input" class="application__call-input application__input-entry" placeholder="Сообщение"></textarea>
                     </div>
                     <div class="application__call-bottom">
                         <div class="application__explanation">Опишите задачу, что необходимо<br/>будет делать.</div>

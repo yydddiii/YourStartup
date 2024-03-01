@@ -25,7 +25,7 @@ window.addEventListener('scroll', function() {
   }
 });
 
-document.querySelector('.application__select-arrow').addEventListener('click', function(){
+document.querySelector('.application__select-rate').addEventListener('click', function(){
   this.classList.toggle('open');
   var submenu_wrapper = document.querySelector('.application__submenu-rate-wrapper');
   if(submenu_wrapper.style.visibility === 'hidden'){
@@ -58,38 +58,34 @@ document.querySelector('.application__cross-img').addEventListener('click', func
   document.querySelector('.header').classList.toggle('hide')
 });
 
+var ratetext = 0
+
 document.querySelector('.application__submenu-option1').addEventListener('click', function(){
   var submenu_wrapper = document.querySelector('.application__submenu-rate-wrapper');
   document.querySelector('.application__select-arrow').classList.toggle('arrow-active')
-  if(submenu_wrapper.style.visibility === 'hidden'){
-    submenu_wrapper.style.visibility = "visible";
-    submenu_wrapper.style.opacity = 1;
-  }else{
-    submenu_wrapper.style.visibility = "hidden";
-    submenu_wrapper.style.opacity = 0;
-  }
+  submenu_wrapper.style.visibility = "hidden";
+  submenu_wrapper.style.opacity = 0;
+  document.querySelector('.application__submenu-option1')
+  ratetext = document.getElementById('application__submenu-option1').innerText
+  document.getElementById('application__select-rate-text').innerText = ratetext;
 });
 
 document.querySelector('.application__submenu-option2').addEventListener('click', function(){
+  ratetext = document.getElementById('application__submenu-option2').innerText
   var submenu_wrapper = document.querySelector('.application__submenu-rate-wrapper');
   document.querySelector('.application__select-arrow').classList.toggle('arrow-active')
-  if(submenu_wrapper.style.visibility === 'hidden'){
-    submenu_wrapper.style.visibility = "visible";
-    submenu_wrapper.style.opacity = 1;
-  }else{
-    submenu_wrapper.style.visibility = "hidden";
-    submenu_wrapper.style.opacity = 0;
-  }
+  submenu_wrapper.style.visibility = "hidden";
+  submenu_wrapper.style.opacity = 0;
+  ratetext = document.getElementById('application__submenu-option2').innerText
+  document.getElementById('application__select-rate-text').innerText = ratetext;
 });
 
 document.querySelector('.application__submenu-option3').addEventListener('click', function(){
+  ratetext = document.getElementById('application__submenu-option3').innerText
   var submenu_wrapper = document.querySelector('.application__submenu-rate-wrapper');
   document.querySelector('.application__select-arrow').classList.toggle('arrow-active')
-  if(submenu_wrapper.style.visibility === 'hidden'){
-    submenu_wrapper.style.visibility = "visible";
-    submenu_wrapper.style.opacity = 1;
-  }else{
-    submenu_wrapper.style.visibility = "hidden";
-    submenu_wrapper.style.opacity = 0;
-  }
+  submenu_wrapper.style.visibility = "hidden";
+  submenu_wrapper.style.opacity = 0;
+  ratetext = document.getElementById('application__submenu-option3').innerText
+  document.getElementById('application__select-rate-text').innerText = ratetext;
 });
