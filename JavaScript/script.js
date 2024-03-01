@@ -89,3 +89,30 @@ document.querySelector('.application__submenu-option3').addEventListener('click'
   ratetext = document.getElementById('application__submenu-option3').innerText
   document.getElementById('application__select-rate-text').innerText = ratetext;
 });
+
+// базовая локига. еще будет доделываться
+function applicationCheck(){
+  var counter = 0
+  var application_name = document.getElementById('application__name-input').value;
+  var application_phone = document.getElementById('application__phone-number-input').value;
+  var application_email = document.getElementById('application__email-input').value;
+  if(application_email === ''){
+    counter = counter + 1;
+    document.getElementById('application__error-email').innerText = 'Обязательное поле';
+    document.querySelector('.application__error-bottom').classList.toggle('active-error');
+  }
+  if(application_phone === ''){
+    counter = counter + 1;
+    document.getElementById('application__error-phone').innerText = 'Обязательное поле';
+    document.querySelector('.application__error-phone').classList.toggle('active-error');
+  }
+  if(application_name === ''){
+    counter = counter + 1;
+    document.getElementById('application__error-name').innerText = 'Обязательное поле';
+    document.querySelector('.application__error-name').classList.toggle('active-error');
+  }
+  if(counter === 0){
+    document.querySelector('.application').classList.toggle('called')
+    document.querySelector('.header').classList.toggle('hide')
+  }
+};
