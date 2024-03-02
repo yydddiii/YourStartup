@@ -1,6 +1,6 @@
 var counterForHeader = 0
 
-//функция бургер открытия(закрытия) меню
+//функция бургер открытие(закрытие) меню
 document.querySelector('.burger-menu').addEventListener('click', function(){
   var header = document.querySelector('.header');
   this.classList.toggle('active');
@@ -42,7 +42,7 @@ document.querySelector('.application__select-rate').addEventListener('click', fu
   document.querySelector('.application__select-arrow').classList.toggle('arrow-active');
 });
 
-//функция вызова меню окна заказов
+//функция вызова меню заказов
 function applicationCall(){
   document.querySelector('.application').classList.toggle('called')
   document.querySelector('.header').classList.toggle('hide')
@@ -86,13 +86,25 @@ function applicationCheck(){
     document.getElementById('application__error-email').innerText = 'Обязательное поле';
     document.querySelector('.application__error-bottom').classList.toggle('bottom-active-error');
   }
-  if(application_rate === ''){
+  if(application_rate === 'Тариф'){
     counterForErrorApplication = counterForErrorApplication + 1;
     document.getElementById('application__error-rate').innerText = 'Обязательное поле';
-    document.querySelector('.application__error-rate').classList.toggle('active-error');
+    document.querySelector('.application__error-call').classList.toggle('active-error-call');
   }
   if(counterForErrorApplication === 0){
     document.querySelector('.application').classList.toggle('called')
-    document.querySelector('.header').classList.toggle('hide')
+    document.querySelector('.application-end').classList.toggle('called')
   }
 };
+
+// функция для кнопки application-end__left-button
+function applicationEnd(){
+  document.querySelector('.application-end').classList.toggle('called')
+  document.querySelector('.application').classList.toggle('called')
+}
+
+// функция закрывания окна при нажатии на крестик
+document.querySelector('.application-end__cross-img').addEventListener('click', function(){
+  document.querySelector('.application-end').classList.toggle('called')
+  document.querySelector('.header').classList.toggle('hide')
+})
