@@ -1,32 +1,36 @@
-var count = 0
+var counterForHeader = 0
 
+//функция бургер открытия(закрытия) меню
 document.querySelector('.burger-menu').addEventListener('click', function(){
   var header = document.querySelector('.header');
   this.classList.toggle('active');
   document.querySelector('.menu').classList.toggle('menu_visible');
   document.querySelector('.right-menu').classList.toggle('menu_visible');
-  if(count === 0){
-    count = 1
+  // проверка для корректного отопражения backgroundColor у header
+  if(counterForHeader === 0){
+    counterForHeader = 1
     header.style.backgroundColor = 'rgba(255, 255, 255, 1)';
   }else if(window.scrollY > 0){
-    count = 0
+    counterForHeader = 0
   }else{
-  count = 0
+    counterForHeader = 0
   header.style.backgroundColor = 'transparent';
-}
+  }
 })
 
+//функция замены backgroundColor шапки при скролле страницы
 window.addEventListener('scroll', function() {
   var header = document.querySelector('.header');
-  if(window.scrollY === 0 && count === 0){
+  if(window.scrollY === 0 && counterForHeader === 0){
     header.style.backgroundColor = 'transparent';
   }else if (window.scrollY > 0) {
     header.style.backgroundColor = 'rgba(255, 255, 255, 1)';
   }
 });
 
+// функция для отображения(скрытия) выпадающего списка application
 document.querySelector('.application__select-rate').addEventListener('click', function(){
-  this.classList.toggle('open');
+  this.classList.toggle('open_menu');
   var submenu_wrapper = document.querySelector('.application__submenu-rate-wrapper');
   if(submenu_wrapper.style.visibility === 'hidden'){
     submenu_wrapper.style.visibility = "visible";
@@ -38,80 +42,56 @@ document.querySelector('.application__select-rate').addEventListener('click', fu
   document.querySelector('.application__select-arrow').classList.toggle('arrow-active');
 });
 
-document.querySelector('.support__button').addEventListener('click', function(){
+//функция вызова меню окна заказов
+function applicationCall(){
   document.querySelector('.application').classList.toggle('called')
   document.querySelector('.header').classList.toggle('hide')
-});
+};
 
-document.querySelector('.right-menu__button').addEventListener('click', function(){
-  document.querySelector('.application').classList.toggle('called')
-  document.querySelector('.header').classList.toggle('hide')
-});
-
-document.querySelector('.big-button__button').addEventListener('click', function(){
-  document.querySelector('.application').classList.toggle('called')
-  document.querySelector('.header').classList.toggle('hide')
-});
-
+//функция закрытия меню заказов
 document.querySelector('.application__cross-img').addEventListener('click', function(){
   document.querySelector('.application').classList.toggle('called')
   document.querySelector('.header').classList.toggle('hide')
 });
 
-var ratetext = 0
-
-document.querySelector('.application__submenu-option1').addEventListener('click', function(){
+// функция замены текста в application__select-rate-text
+function changeRate(element){
+  var ratetext = document.getElementById(element).innerText;
   var submenu_wrapper = document.querySelector('.application__submenu-rate-wrapper');
   document.querySelector('.application__select-arrow').classList.toggle('arrow-active')
   submenu_wrapper.style.visibility = "hidden";
   submenu_wrapper.style.opacity = 0;
-  document.querySelector('.application__submenu-option1')
-  ratetext = document.getElementById('application__submenu-option1').innerText
   document.getElementById('application__select-rate-text').innerText = ratetext;
-});
+}
 
-document.querySelector('.application__submenu-option2').addEventListener('click', function(){
-  ratetext = document.getElementById('application__submenu-option2').innerText
-  var submenu_wrapper = document.querySelector('.application__submenu-rate-wrapper');
-  document.querySelector('.application__select-arrow').classList.toggle('arrow-active')
-  submenu_wrapper.style.visibility = "hidden";
-  submenu_wrapper.style.opacity = 0;
-  ratetext = document.getElementById('application__submenu-option2').innerText
-  document.getElementById('application__select-rate-text').innerText = ratetext;
-});
-
-document.querySelector('.application__submenu-option3').addEventListener('click', function(){
-  ratetext = document.getElementById('application__submenu-option3').innerText
-  var submenu_wrapper = document.querySelector('.application__submenu-rate-wrapper');
-  document.querySelector('.application__select-arrow').classList.toggle('arrow-active')
-  submenu_wrapper.style.visibility = "hidden";
-  submenu_wrapper.style.opacity = 0;
-  ratetext = document.getElementById('application__submenu-option3').innerText
-  document.getElementById('application__select-rate-text').innerText = ratetext;
-});
-
-// базовая локига. еще будет доделываться
+// базовая локига application. еще будет доделываться
 function applicationCheck(){
-  var counter = 0
+  var counterForErrorApplication = 0
   var application_name = document.getElementById('application__name-input').value;
   var application_phone = document.getElementById('application__phone-number-input').value;
   var application_email = document.getElementById('application__email-input').value;
-  if(application_email === ''){
-    counter = counter + 1;
-    document.getElementById('application__error-email').innerText = 'Обязательное поле';
-    document.querySelector('.application__error-bottom').classList.toggle('active-error');
-  }
-  if(application_phone === ''){
-    counter = counter + 1;
-    document.getElementById('application__error-phone').innerText = 'Обязательное поле';
-    document.querySelector('.application__error-phone').classList.toggle('active-error');
-  }
+  var application_rate = document.getElementById('application__select-rate-text').innerText
   if(application_name === ''){
-    counter = counter + 1;
+    counterForErrorApplication = counterForErrorApplication + 1;
     document.getElementById('application__error-name').innerText = 'Обязательное поле';
     document.querySelector('.application__error-name').classList.toggle('active-error');
   }
-  if(counter === 0){
+  if(application_phone === ''){
+    counterForErrorApplication = counterForErrorApplication + 1;
+    document.getElementById('application__error-phone').innerText = 'Обязательное поле';
+    document.querySelector('.application__error-phone').classList.toggle('active-error');
+  } 
+  if(application_email === ''){
+    counterForErrorApplication = counterForErrorApplication + 1;
+    document.getElementById('application__error-email').innerText = 'Обязательное поле';
+    document.querySelector('.application__error-bottom').classList.toggle('bottom-active-error');
+  }
+  if(application_rate === ''){
+    counterForErrorApplication = counterForErrorApplication + 1;
+    document.getElementById('application__error-rate').innerText = 'Обязательное поле';
+    document.querySelector('.application__error-rate').classList.toggle('active-error');
+  }
+  if(counterForErrorApplication === 0){
     document.querySelector('.application').classList.toggle('called')
     document.querySelector('.header').classList.toggle('hide')
   }

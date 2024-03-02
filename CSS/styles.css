@@ -10,6 +10,20 @@
 }
 
 @media (min-width: 1300px){
+    .application{
+        grid-template-columns: 46% 46% 8%;
+    }
+
+    .application__information {
+        font-size: 25px;
+    }
+
+    .application__static-input{
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
+        grid-template-rows: repeat(2, 50%);
+    }
+
     .header{
         grid-template-columns: 1fr 8fr 4fr ;
     }
@@ -137,6 +151,39 @@
 }
 
 @media (max-width: 1300px){
+    .application{
+        grid-template-rows: 6% 25% 47%;
+        overflow: scroll;
+    }
+
+    .application__bottom-text{
+        display: none;
+    }
+
+    .application__title{
+        font-size: 31px;
+    }
+
+    .application__information{
+        font-size: 14px;
+    }
+
+    .application__static-input{
+        display: grid;
+        grid-template-rows: repeat(4, 25%);
+    }
+
+    .application__cross{
+        grid-row: 1;
+    }
+
+    .application__text{
+        grid-row: 2;
+    }
+
+    .application__input-blockP{
+        grid-row: 3;
+    }
     .menu_visible{
         display: flex !important;
         margin-top: 62px;
@@ -275,11 +322,6 @@
         margin-top: 62px;
     }
 
-    /* .vissible{
-        visibility: visible;
-        opacity: 1;
-    } */
-
     .header{
         height: 60px;
     }
@@ -400,11 +442,6 @@
     }
 }
 
-.space{
-    padding-left: 4%;
-    padding-right: 4%;
-}
-
 body{
     margin: auto;
     max-width: 1920px;
@@ -419,6 +456,31 @@ input{
     outline: 0;
 }
 
+h1{
+    font-size: 64px;
+}
+
+h2{
+    font-size: 40px;
+    font-weight: 600;
+}
+
+h3{
+    font-size: 24px;
+    font-weight: 600;
+}
+
+h4{
+    font-size: 30px;
+    font-weight: 600;
+    margin: 0;
+}
+
+h5{
+    font-size: 14px;
+    font-weight: 400;
+}
+
 .called{
     display: grid !important;
 }
@@ -427,10 +489,13 @@ input{
     display: none !important;
 }
 
+section{
+    padding: 0 4% 0 4%;
+}
+
 .application{
-    display: none;
-    grid-template-columns: 46% 46% 8%;
     position: fixed;
+    display: none;
     max-width: 1920px;
     height: 100%;
     width: 100%;
@@ -445,12 +510,6 @@ input{
     margin:auto;
     padding-top: 120px;
     animation: applicationAnimation 1s;
-}
-
-.application__static-input{
-    display: grid;
-    grid-template-columns: repeat(2, 50%);
-    grid-template-rows: repeat(2, 50%);
 }
 
 .application__input-call{
@@ -494,12 +553,10 @@ input{
 }
 
 .application__title{
-    font-size: 64px;
-    font-weight: bold;
+    font-weight: 600;
 }
 
 .application__information{
-    font-size: 25px;
     color: #676F73;
     margin-top: 60px;
 }
@@ -641,7 +698,7 @@ input{
 
 .application__error-name{
     color: red;
-    transform: translateY(42px);
+    transform: translateY(242px);
     transition: all .5s ease;
     width: 200px;
     font-size: 12px;
@@ -649,7 +706,7 @@ input{
 
 .application__error-phone{
     color: red;
-    transform: translateY(42px);
+    transform: translateY(242px);
     transition: all .5s ease;
     width: 200px;
     font-size: 12px;
@@ -657,10 +714,18 @@ input{
 
 .application__error-bottom{
     color: red;
-    transform: translateY(25px);
+    transform: translateY(225px);
     transition: all .5s ease;
     width: 200px;
     font-size: 12px;
+}
+
+.active-error{
+    transform: translateY(42px);
+}
+
+.bottom-active-error{
+    transform: translateY(25px);
 }
 
 .header{
@@ -807,7 +872,7 @@ input{
     font-size: 64px;
     margin-top: 0px;
     margin-bottom: 5px;
-    font-weight: bold;
+    font-weight: 700;
 }
 
 .support__main-text{
@@ -875,8 +940,6 @@ input{
 
 .title-text{
     margin-top: 100px;
-    font-weight: bold;
-    font-size: 40px;
     margin-bottom: 60px;
 }
 
@@ -908,11 +971,6 @@ input{
     flex-direction: column;
     justify-content: center;
     margin-left: 75px;
-}
-
-.technologies__name-text{
-    font-weight: bold;
-    font-size: 30px;
 }
 
 .technologies__description-text{
@@ -953,10 +1011,6 @@ input{
     font-size: 24px;
 }
 
-.possibilites__title-text{
-    font-weight: bold;
-}
-
 .possibilites__info-text{
     margin-top: 25px;
     color: #676F73;
@@ -968,10 +1022,6 @@ input{
     grid-template-columns: 60% 40%;
 }
 
-.subscription-top-block__title-text{
-    font-size: 40px;
-    font-weight: bold;
-}
 
 .subscription-top-block__left-side-text{
     color: #676F73;
@@ -996,11 +1046,6 @@ input{
 
 .subscription__margin{
     margin: 30px 50px 10px 50px;
-}
-
-.subscription__name-text{
-    font-size: 40px;
-    font-weight: bold;
 }
 
 .subscription__time-text{
@@ -1167,6 +1212,7 @@ input{
 }
 
 .footer-bottom__text{
+    margin-top: 0;
     margin-right: 60px;
     color: #A8ADAF;
     font-size: 14px;
