@@ -684,6 +684,7 @@ section{
     max-width: 200px;
     width: 120px;
     height: 50px;
+    border: 2px solid black;
 }
 
 .application__bottom{
