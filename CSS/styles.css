@@ -502,8 +502,8 @@ h5{
     display: none !important;
 }
 
-section{
-    padding: 0 4% 0 4%;
+.container{
+    margin: 0 4% 0 4%;
 }
 
 .application__error-call-wrapper{
@@ -751,15 +751,14 @@ section{
 }
 
 .active-error{
-    transform: translateY(42px);
+    transform: translateY(50px);
 }
 
 .bottom-active-error{
-    transform: translateY(25px);
+    transform: translateY(33px);
 }
 
 .application__upload-file{
-    background-color: red;
     width: 120px;   
     height: 50px;
     transform: translateX(-180px);
