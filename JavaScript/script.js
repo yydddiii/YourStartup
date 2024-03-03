@@ -8,12 +8,12 @@ document.querySelector('.burger-menu').addEventListener('click', function(){
   document.querySelector('.right-menu').classList.toggle('menu_visible');
   // проверка для корректного отопражения backgroundColor у header
   if(counterForHeader === 0){
-    counterForHeader = 1
+    counterForHeader = 1;
     header.style.backgroundColor = 'rgba(255, 255, 255, 1)';
   }else if(window.scrollY > 0){
-    counterForHeader = 0
+    counterForHeader = 0;
   }else{
-    counterForHeader = 0
+    counterForHeader = 0;
   header.style.backgroundColor = 'transparent';
   }
 })
@@ -44,14 +44,14 @@ document.querySelector('.application__select-rate').addEventListener('click', fu
 
 //функция вызова меню заказов
 function applicationCall(){
-  document.querySelector('.application').classList.toggle('called')
-  document.querySelector('.header').classList.toggle('hide')
+  document.querySelector('.application').classList.toggle('called');
+  document.querySelector('.header').classList.toggle('hide');
 };
 
 //функция закрытия меню заказов
 document.querySelector('.application__cross-img').addEventListener('click', function(){
-  document.querySelector('.application').classList.toggle('called')
-  document.querySelector('.header').classList.toggle('hide')
+  document.querySelector('.application').classList.toggle('called');
+  document.querySelector('.header').classList.toggle('hide');
 });
 
 // функция замены текста в application__select-rate-text
@@ -64,7 +64,7 @@ function changeRate(element){
   document.getElementById('application__select-rate-text').innerText = ratetext;
 }
 
-// базовая локига application. еще будет доделываться
+// функция кнопки 'отправить' в меню заказов. осталось написать проверку телефона и емайла 
 function applicationCheck(){
   var counterForErrorApplication = 0
   var application_name = document.getElementById('application__name-input').value;
@@ -73,38 +73,54 @@ function applicationCheck(){
   var application_rate = document.getElementById('application__select-rate-text').innerText
   if(application_name === ''){
     counterForErrorApplication = counterForErrorApplication + 1;
+    document.querySelector('.application__error-name').classList.remove('active-error');
     document.getElementById('application__error-name').innerText = 'Обязательное поле';
     document.querySelector('.application__error-name').classList.toggle('active-error');
-  }
+  }else{
+    document.getElementById('application__error-name').innerText = '';
+    document.querySelector('.application__error-name').classList.remove('active-error')
+  };
   if(application_phone === ''){
     counterForErrorApplication = counterForErrorApplication + 1;
+    document.querySelector('.application__error-phone').classList.remove('active-error');
     document.getElementById('application__error-phone').innerText = 'Обязательное поле';
     document.querySelector('.application__error-phone').classList.toggle('active-error');
-  } 
+  }else{
+    document.getElementById('application__error-phone').innerText = '';
+    document.querySelector('.application__error-phone').classList.remove('active-error');
+  }
   if(application_email === ''){
     counterForErrorApplication = counterForErrorApplication + 1;
+    document.querySelector('.application__error-bottom').classList.remove('bottom-active-error');
     document.getElementById('application__error-email').innerText = 'Обязательное поле';
     document.querySelector('.application__error-bottom').classList.toggle('bottom-active-error');
+  }else{
+    document.getElementById('application__error-email').innerText = '';
+    document.querySelector('.application__error-bottom').classList.remove('bottom-active-error');
   }
   if(application_rate === 'Тариф'){
     counterForErrorApplication = counterForErrorApplication + 1;
+    document.querySelector('.application__error-call').classList.remove('active-error-call');
     document.getElementById('application__error-rate').innerText = 'Обязательное поле';
     document.querySelector('.application__error-call').classList.toggle('active-error-call');
+  }else{
+    document.getElementById('application__error-rate').innerText = '';
+    document.querySelector('.application__error-call').classList.remove('active-error-call');
   }
   if(counterForErrorApplication === 0){
-    document.querySelector('.application').classList.toggle('called')
-    document.querySelector('.application-end').classList.toggle('called')
-  }
+    document.querySelector('.application').classList.toggle('called');
+    document.querySelector('.application-end').classList.toggle('called');
+  };
 };
 
 // функция для кнопки application-end__left-button
 function applicationEnd(){
-  document.querySelector('.application-end').classList.toggle('called')
-  document.querySelector('.application').classList.toggle('called')
+  document.querySelector('.application-end').classList.toggle('called');
+  document.querySelector('.application').classList.toggle('called');
 }
 
 // функция закрывания окна при нажатии на крестик
 document.querySelector('.application-end__cross-img').addEventListener('click', function(){
-  document.querySelector('.application-end').classList.toggle('called')
-  document.querySelector('.header').classList.toggle('hide')
-})
+  document.querySelector('.application-end').classList.toggle('called');
+  document.querySelector('.header').classList.toggle('hide');
+});

@@ -31,7 +31,7 @@
             </ul>
         </nav>
         <div class="right-menu">
-            <p class="right-menu__phone-number"><span class="menu__phone-number-color-text">8 (800) </span>350 93 98</p>
+            <a href="tel:#" class="right-menu__phone-number"><span class="menu__phone-number-color-text">8 (800) </span>350 93 98</a>
             <button type="button" class="button right-menu__button" onclick = applicationCall()>обсудить проект</button>
         </div>
         <div class="burger-menu">
@@ -66,13 +66,15 @@
                     </div>
                     <div class="application__rate-block">
                         <div class="application__select-rate">
-                            <p id='application__select-rate-text' class="application__select-rate-text">текст</p>
+                            <p id='application__select-rate-text' class="application__select-rate-text">Тариф</p>
                             <div class="application__select-arrow">
                                 <span class="application__select-arrow-left"></span>
                                 <span class="application__select-arrow-right"></span>
                             </div>
                         </div>
-                        <span id="application__error-" class="application__error-call"></span>
+                        <div class="application__error-call-wrapper">
+                            <span id="application__error-rate" class="application__error-call"></span>
+                        </div>
                         <div class="application__submenu-rate-wrapper" style="visibility: hidden; opacity: 0;">
                             <div class="application__submenu-rate">
                                 <div id="application__submenu-option1" class="application__submenu-option application__submenu-option1" onclick = "changeRate('application__submenu-option1')">лайт</div>
@@ -89,6 +91,7 @@
                             <p class="application__explanation">Опишите задачу, что необходимо<br/>будет делать.</p>
                             <div class="application__call-button">
                                 <button type="file" class="application__button-upload-file">прикрепить файл</button>
+                                <input type="file" class="application__upload-file">
                             </div>
                         </div>
                     </div>
