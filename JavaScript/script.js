@@ -156,13 +156,7 @@ document.querySelector('.application-end__cross-img').addEventListener('click', 
   document.querySelector('.header').classList.toggle('hide');
 });
 
-document.querySelectorAll('.possibilites__block-box').addEventListener('click', function(){
-  document.querySelector('.possibilites__block-box').classList.toggle('open-possibilites-box');
-  document.querySelector('.possibilites__bottom-shadow').classList.toggle('open-possibilites-shadow');
-  document.querySelector('.possibilites__img-arrow').classList.toggle('open-possibilites-arrow');
-});
-
-
+// функция окрывания окна информации в "возможности"
 function openInformation(num){
   document.querySelector('.possibilites__block-box' + num).classList.toggle('open-possibilites-box');
   document.querySelector('.possibilites__bottom-shadow' + num).classList.toggle('open-possibilites-shadow');
