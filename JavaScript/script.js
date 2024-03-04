@@ -101,7 +101,6 @@ function applicationCheck(){
     document.querySelector('.application__error-phone').classList.toggle('active-error');
   }else{
     if(!valPhone.test(application_phone)){
-      console.log('Не соответствует');
       counterForErrorApplication = counterForErrorApplication + 1;
       document.querySelector('.application__error-phone').classList.remove('active-error');
       document.getElementById('application__error-phone').innerText = 'Ведикте корректные данные';
@@ -109,7 +108,6 @@ function applicationCheck(){
     }else{
     document.getElementById('application__error-phone').innerText = '';
     document.querySelector('.application__error-phone').classList.remove('active-error');
-    console.log('соответствует');
     };
   };
   if(application_email === ''){
@@ -126,7 +124,6 @@ function applicationCheck(){
     }else{
     document.getElementById('application__error-email').innerText = '';
     document.querySelector('.application__error-bottom').classList.remove('bottom-active-error');
-    console.log('соответствует');
     };
   };
   if(application_rate === 'Тариф'){
